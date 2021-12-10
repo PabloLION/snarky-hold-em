@@ -3,7 +3,12 @@
 ### smart contract
 
 - [mitschabaude/snarkyjs-sudoku](https://github.com/mitschabaude/snarkyjs-sudoku)
-- [wenkesj/holdem](https://github.com/wenkesj/holdem)
+- AI: [wenkesj/holdem](https://github.com/wenkesj/holdem)
+
+### Poker engine
+
+- [mjhbell/node-poker](https://github.com/mjhbell/node-poker)
+- Didn't use [brunoscopelliti/poker-holdem-engine](https://github.com/brunoscopelliti/poker-holdem-engine), because it's an online API and seems everyone can shuffle the deck.
 
 ### UI
 
@@ -21,4 +26,4 @@
 ## feature goal
 
 - Make a snarky-holdem smart contract
--
+- Inclement some AI
