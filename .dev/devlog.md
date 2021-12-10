@@ -7,7 +7,8 @@
 
 ### Poker engine
 
-- [mjhbell/node-poker](https://github.com/mjhbell/node-poker)
+- [goldfire/pokersolver](https://github.com/goldfire/pokersolver)
+- Didn't use[mjhbell/node-poker](https://github.com/mjhbell/node-poker). Out of date, no NPM.
 - Didn't use [brunoscopelliti/poker-holdem-engine](https://github.com/brunoscopelliti/poker-holdem-engine), because it's an online API and seems everyone can shuffle the deck.
 
 ### UI

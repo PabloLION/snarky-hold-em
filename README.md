@@ -2,7 +2,7 @@
 
 ## Poker engine
 
-- To use [mjhbell/node-poker](https://github.com/mjhbell/node-poker) or [https://deckofcardsapi.com/](https://deckofcardsapi.com/)
+- [goldfire/pokersolver](https://github.com/goldfire/pokersolver)
 
 ## Docs/Contribution
 
@@ -19,7 +19,7 @@ From Hold'em rule
 
 Cards
 
-- To use [mjhbell/node-poker](https://github.com/mjhbell/node-poker) or [https://deckofcardsapi.com/](https://deckofcardsapi.com/)
+- To use [goldfire/pokersolver](https://github.com/goldfire/pokersolver)
 - First character for number, second character for suit. See examples below.
   "AS": Ace of Spades
   "QH": Queen of Hearts
