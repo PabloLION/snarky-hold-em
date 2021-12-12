@@ -1,36 +1,50 @@
-import { CardCode, card_codes, card_code_to_face } from 'poker';
-import { fac52, intToPermOrder, permOrderToInt } from 'utils/math';
-import { rndBigInt } from 'utils/randomUtil';
+import { CardCode, card_codes, card_code_to_face } from '../poker';
+import { fac52, intToPermOrder, permOrderToInt } from '../utils/math';
+import { rndBigInt } from '../utils/randomUtil';
 
 export default class Deck {
   code: bigint;
   card_order: number[];
-  cards: CardCode[];
-  constructor(code: bigint = fac52 - 1n) {
+  get cards(): CardCode[] {
+    return this.card_order.map((i) => card_codes[i]);
+  }
+  get card_faces() {
+    return this.cards.map((c) => card_code_to_face(c));
+  }
+  constructor(code: bigint = 0n) {
     this.code = code;
-    this.card_order = this.decodeDeck(code);
-    this.cards = this.card_order.map((i) => card_codes[i]);
+    this.card_order = []; // for TS, real number on next line
+    this.decode();
   }
-  show_deck() {
-    const card_faces = this.cards.map((c) => card_code_to_face(c));
-    console.log(card_faces.join(' '));
-    return card_faces;
+
+  show() {
+    console.log(this.card_faces.join(' '));
+    return this;
   }
-  encodeDeck(deck_order: number[]) {
-    return permOrderToInt(deck_order);
+  encode() {
+    this.code = encodeDeck(this.card_order);
+    return this.code;
   }
-  decodeDeck(deck_code: bigint) {
-    return intToPermOrder(deck_code, 52);
+  decode() {
+    this.card_order = decodeDeck(this.code);
+    return this;
   }
-  shuffleDeck() {
+  shuffle() {
     this.code = rndBigInt(fac52);
-    this.card_order = this.decodeDeck(this.code);
+    this.decode();
+    return this;
   }
 }
 
-export function encodeDeck(deck_order: number[]) {
+const d = new Deck();
+d.show();
+d.shuffle();
+d.show();
+
+export { encodeDeck, decodeDeck }; //for test
+function encodeDeck(deck_order: number[]) {
   return permOrderToInt(deck_order);
 }
-export function decodeDeck(deck_code: bigint) {
+function decodeDeck(deck_code: bigint) {
   return intToPermOrder(deck_code, 52);
 }

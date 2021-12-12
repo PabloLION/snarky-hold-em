@@ -1,58 +1,10 @@
-export const card_codes = [
-  'Tc',
-  'Td',
-  'Th',
-  'Ts',
-  '2c',
-  '2d',
-  '2h',
-  '2s',
-  '3c',
-  '3d',
-  '3h',
-  '3s',
-  '4c',
-  '4d',
-  '4h',
-  '4s',
-  '5c',
-  '5d',
-  '5h',
-  '5s',
-  '6c',
-  '6d',
-  '6h',
-  '6s',
-  '7c',
-  '7d',
-  '7h',
-  '7s',
-  '8c',
-  '8d',
-  '8h',
-  '8s',
-  '9c',
-  '9d',
-  '9h',
-  '9s',
-  'Ac',
-  'Ad',
-  'Ah',
-  'As',
-  'Jc',
-  'Jd',
-  'Jh',
-  'Js',
-  'Kc',
-  'Kd',
-  'Kh',
-  'Ks',
-  'Qc',
-  'Qd',
-  'Qh',
-  'Qs',
-];
-export const cardSpriteOrder = [...card_codes, 'Cb'] as const;
+export const card_codes = JSON.parse(
+  '["2d","2c","2h","2s","3d","3c","3h","3s","4d","4c","4h","4s","5d","5c","5h","5s","6d","6c","6h","6s","7d","7c","7h","7s","8d","8c","8h","8s","9d","9c","9h","9s","Td","Tc","Th","Ts","Jd","Jc","Jh","Js","Qd","Qc","Qh","Qs","Kd","Kc","Kh","Ks","Ad","Ac","Ah","As"]'
+);
+export const cardSpriteOrder = JSON.parse(
+  '{"order":["Tc","Td","Th","Ts","2c","2d","2h","2s","3c","3d","3h","3s","4c","4d","4h","4s","5c","5d","5h","5s","6c","6d","6h","6s","7c","7d","7h","7s","8c","8d","8h","8s","9c","9d","9h","9s","Ac","Ad","Ah","As","Jc","Jd","Jh","Js","Kc","Kd","Kh","Ks","Qc","Qd","Qh","Qs","Cb"]}'
+);
+// export const cardSpriteOrder = [...card_codes, 'Cb' ]
 // export type CardCode = Exclude<typeof cardSpriteOrder[number], 'Cb'>;
 export type CardCode = typeof card_codes[number];
 export type PokerFaceCode = typeof cardSpriteOrder[number];
