@@ -70,8 +70,19 @@ function permInsertToInt(permInsert: number[]): NumType {
   for (const [ind, curr] of permInsert.slice(0, -1).entries()) {
     result = (result + BigInt(curr)) * BigInt(ind + 2);
   }
+  console.log('permInsert : ', permInsert); // DEV_LOG_TO_REMOVE
+  console.log('(permInsert as any).at(-1) : ', (permInsert as any).at(-1)); // DEV_LOG_TO_REMOVE
+  console.log(
+    'BigInt((permInsert as any).at(-1)) : ',
+    BigInt((permInsert as any).at(-1))
+  ); // DEV_LOG_TO_REMOVE
   return result + BigInt((permInsert as any).at(-1));
 }
+permInsertToInt([
+  48, 20, 4, 45, 2, 24, 34, 51, 27, 14, 37, 25, 15, 43, 35, 11, 21, 5, 22, 40,
+  33, 36, 10, 7, 6, 0, 13, 18, 44, 17, 49, 8, 46, 41, 32, 12, 50, 42, 38, 47,
+  31, 23, 26, 1, 39, 28, 16, 30, 19, 29, 9,
+]);
 
 /**
  * Convert a permutation insert position to permutation order

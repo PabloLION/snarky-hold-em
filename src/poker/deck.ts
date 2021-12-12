@@ -1,8 +1,23 @@
-import { CardCode, card_codes, card_code_to_face } from '../poker';
+import { CardCode, card_codes, card_code_to_face } from '.';
 import { fac52, intToPermOrder, permOrderToInt } from '../utils/math';
 import { rndBigInt } from '../utils/randomUtil';
-
 export default class Deck {
+  cards: string[];
+  constructor() {
+    this.cards = Array.from(card_codes).map((c) => card_code_to_face(c));
+  }
+  deal(): string {
+    return this.cards.pop()!;
+  }
+  static toNum(c: string): string {
+    return (
+      c.codePointAt(0)!.toString(16) +
+      c.codePointAt(1)!.toString(16).padStart(4, '0')
+    );
+  }
+}
+
+export class OldDeck {
   code: bigint;
   card_order: number[];
   get cards(): CardCode[] {
@@ -34,12 +49,22 @@ export default class Deck {
     this.decode();
     return this;
   }
+  deal() {
+    if (this.card_order.length === 0) {
+      throw new Error('Deck is empty');
+    }
+    const card_code = this.card_order.pop();
+    console.log('card_code : ', card_code); // DEV_LOG_TO_REMOVE
+
+    this.encode();
+    return card_code!;
+  }
 }
 
-const d = new Deck();
-d.show();
-d.shuffle();
-d.show();
+// const d = new OldDeck();
+// d.show();
+// d.shuffle();
+// d.show();
 
 export { encodeDeck, decodeDeck }; //for test
 function encodeDeck(deck_order: number[]) {

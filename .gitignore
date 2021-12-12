@@ -3,6 +3,8 @@
 
 # dev
 external-repos/
+snarky-app
+!snarky-app/src
 
 # dependencies
 /node_modules
