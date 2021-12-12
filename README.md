@@ -48,7 +48,7 @@ My current problems about MINA:
   - debug `await this.gameStage.get();` can't use twice, where `gameStage` is a `State<Field>` (failed)
   - Came up with a new way to record the bookkeeping of the game. Charge all user with a `buyIn` then note it down to a `Map<PlayerPublicKey, CreditBalance>`.
 
-## Day 3
+### Day 3
 
 - SnarkyJS
   - Tried(failed) to deal card, as aforementioned "4. How to send message to a specific account?"
