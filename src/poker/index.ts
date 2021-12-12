@@ -1,4 +1,4 @@
-export const cardSpriteOrder = [
+export const card_codes = [
   'Tc',
   'Td',
   'Th',
@@ -51,12 +51,29 @@ export const cardSpriteOrder = [
   'Qd',
   'Qh',
   'Qs',
-  'Cb',
-] as const;
-export type CardCode = Exclude<typeof cardSpriteOrder[number], 'Cb'>;
-export type PokerCardCode = Exclude<CardCode, 'Cb'>;
+];
+export const cardSpriteOrder = [...card_codes, 'Cb'] as const;
+// export type CardCode = Exclude<typeof cardSpriteOrder[number], 'Cb'>;
+export type CardCode = typeof card_codes[number];
+export type PokerFaceCode = typeof cardSpriteOrder[number];
 // | 'As'  | 'Ks'  | 'Qs'  | 'Js'  | 'Ts'  | '9s'  | '8s'  | '7s'  | '6s'  | '5s'  | '4s'  | '3s'  | '2s'
 // | 'Ah'  | 'Kh'  | 'Qh'  | 'Jh'  | 'Th'  | '9h'  | '8h'  | '7h'  | '6h'  | '5h'  | '4h'  | '3h'  | '2h'
 // | 'Ad'  | 'Kd'  | 'Qd'  | 'Jd'  | 'Td'  | '9d'  | '8d'  | '7d'  | '6d'  | '5d'  | '4d'  | '3d'  | '2d'
 // | 'Ac'  | 'Kc'  | 'Qc'  | 'Jc'  | 'Tc'  | '9c'  | '8c'  | '7c'  | '6c'  | '5c'  | '4c'  | '3c'  | '2c'
 // | 'Cb'; // card back, red
+export const card_code_to_face = (card_code: CardCode) => {
+  const face = card_code[0];
+  const suit = card_code[1];
+  switch (suit) {
+    case 'c':
+      return `${face}♣`;
+    case 'd':
+      return `${face}♦`;
+    case 'h':
+      return `${face}♥`;
+    case 's':
+      return `${face}♠`;
+    default:
+      return 'Cb';
+  }
+};
