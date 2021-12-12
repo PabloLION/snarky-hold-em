@@ -127,14 +127,17 @@ class PokerHost extends SmartContract {
   @method declareWinner(playerID: PublicKey) {
     // const stage = await this.gameStage.get();
     this.gameStage.set(new Field(0));
-    if (this.playerIDs.length === 0) {return UInt64.fromNumber(0);}
-    else {
-    const total = this.playerIDs.reduce((acc,id) => acc +(this.playerCredits.get(id)??0), 0);
-    return UInt64.fromNumber(total);}
+    if (this.playerIDs.length === 0) {
+      return UInt64.fromNumber(0);
+    } else {
+      const total = this.playerIDs.reduce(
+        (acc, id) => acc + (this.playerCredits.get(id) ?? 0),
+        0
+      );
+      return UInt64.fromNumber(total);
+    }
   }
 }
-
-
 
 async function test() {
   /* ENV: Local Chain */
