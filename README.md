@@ -45,7 +45,21 @@ My current problems about MINA:
 - Improve development environment (my tool)
 - SnarkyJS
   - read [TicTacToe guide](https://o1labs.org/tictactoe)
-  -
+  - debug `await this.gameStage.get();` can't use twice, where `gameStage` is a `State<Field>` (failed)
+  - Came up with a new way to record the bookkeeping of the game. Charge all user with a `buyIn` then note it down to a `Map<PlayerPublicKey, CreditBalance>`.
+
+## Day 3
+
+- SnarkyJS
+  - Tried(failed) to deal card, as aforementioned "4. How to send message to a specific account?"
+  - Tried(failed) to make two snapps, one for user and one for server.
+- Wanted to change the project to TicTacToe with UI and bet.
+  - Started a new repo for TicTacToe and copied the code from [TicTacToe guide](https://o1labs.org/tictactoe).
+  - Reevaluated that I cannot finish it either(in 2h).
+- Git
+  - Fixed detached head
+  - Upload GitHub
+  - Fix typo while writing this doc.
 
 ## feature goal
 
@@ -54,7 +68,7 @@ My current problems about MINA:
 
 ## Docs/Contribution
 
-### Naming space
+### Name space
 
 #### Poker Game
 
