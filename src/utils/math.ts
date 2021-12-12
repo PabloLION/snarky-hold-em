@@ -44,7 +44,7 @@ function intToPermInsert(int: NumType, nEle: number): number[] {
 }
 
 /**
- * Reverse of `intToPermInsert`
+ * Inverse of `intToPermInsert`
  * Convert permutation insert position to integer
  *
  * @param  {number[]} permInsert
@@ -107,7 +107,7 @@ function permInsertToPermOrder(permInsert: number[]): number[] {
 }
 
 /**
- * Reverse of `permInsertToPermOrder`
+ * Inverse of `permInsertToPermOrder`
  * Convert a permutation order to permutation insert position
  *
  * @param  {number[]} permInsert: permutation insert position
@@ -156,7 +156,7 @@ function intToPermOrder(int: NumType, nEle: number): number[] {
   return permInsertToPermOrder(permInsert);
 }
 /**
- * Reverse of `intToPermOrder`
+ * Inverse of `intToPermOrder`
  * Combination of intToPermInsert and permInsertToPermOrder.
  * @param  {NumType} int
  * @param  {NumType} nEle

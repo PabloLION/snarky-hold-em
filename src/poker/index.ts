@@ -13,6 +13,7 @@ export type PokerFaceCode = typeof cardSpriteOrder[number];
 // | 'Ad'  | 'Kd'  | 'Qd'  | 'Jd'  | 'Td'  | '9d'  | '8d'  | '7d'  | '6d'  | '5d'  | '4d'  | '3d'  | '2d'
 // | 'Ac'  | 'Kc'  | 'Qc'  | 'Jc'  | 'Tc'  | '9c'  | '8c'  | '7c'  | '6c'  | '5c'  | '4c'  | '3c'  | '2c'
 // | 'Cb'; // card back, red
+export type CardFace = ReturnType<typeof card_code_to_face>;
 export const card_code_to_face = (card_code: CardCode) => {
   const face = card_code[0];
   const suit = card_code[1];
